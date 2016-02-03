@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class DisplayMessageActivity extends AppCompatActivity {
-
+    public final static String EXTRA_MESSAGE = "com.miko.tamikowilliamsactivities.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +33,16 @@ public class DisplayMessageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         TextView textView = (TextView)findViewById(R.id.firstText);
-        //textView.setTextSize(40);
         textView.setText(message);
 
-        //RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
-        //layout.addView(textView);
+    }
+    public void sendSecondMessage(View view) {
+        Intent intent = new Intent(this, DisplaySecondMessageActivity.class);
+        EditText editText = (EditText) findViewById(R.id.edit_secondMessage);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+
     }
 
 }

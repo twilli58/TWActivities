@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class DisplaySecondMessageActivity extends AppCompatActivity {
-    public final static String EXTRA_MESSAGE = "com.miko.tamikowilliamsactivities.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,23 +29,11 @@ public class DisplaySecondMessageActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /**Intent intent = getIntent();
-        String message2 = intent.getStringExtra(DisplayMessageActivity.EXTRA_MESSAGE);
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText(message2);
-
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
-        layout.addView(textView);
-
         Intent intent = getIntent();
         String message = intent.getStringExtra(DisplayMessageActivity.EXTRA_MESSAGE);
-        TextView receivedText1 = (TextView)findViewById(R.id.fText);
-        receivedText1.setText(message);
+        TextView textView = (TextView)findViewById(R.id.secondText);
+        textView.setText(message);
 
-        String mess = intent.getStringExtra(DisplayMessageActivity.EXTRA_MESSAGE2);
-        TextView receivedText2 = (TextView)findViewById(R.id.secondText);
-        receivedText2.setText(mess);*/
     }
 
 }
