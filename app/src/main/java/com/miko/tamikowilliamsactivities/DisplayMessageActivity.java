@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class DisplayMessageActivity extends AppCompatActivity {
-    public final static String EXTRA_MESSAGE = "com.miko.tamikowilliamsactivities.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,26 +32,12 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        TextView receivedText = (TextView)findViewById(R.id.firstText);
-        receivedText.setText(message);
-        /**TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText(message);*/
+        TextView textView = (TextView)findViewById(R.id.firstText);
+        //textView.setTextSize(40);
+        textView.setText(message);
 
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
-        layout.addView(receivedText);
-    }
-    public void sendSecondMessage(View view) {
-        Intent intent = new Intent(this, DisplaySecondMessageActivity.class);
-        EditText editText = (EditText)findViewById(R.id.edit_secondMessage);
-        String message2 = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message2);
-
-        TextView textView = (TextView)findViewById(R.id.firstText);//if textview doesn't work change the field to a edit text and fix related issues
-        String message3 = textView.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message3);
-
-        startActivity(intent);
+        //RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
+        //layout.addView(textView);
     }
 
 }
