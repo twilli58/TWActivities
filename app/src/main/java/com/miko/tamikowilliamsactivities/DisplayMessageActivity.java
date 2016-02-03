@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class DisplayMessageActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.miko.tamikowilliamsactivities.MESSAGE";
     @Override
@@ -41,6 +43,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.edit_secondMessage);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
+        final TextView v = (TextView)findViewById(R.id.firstText);
+        String userMessage = v.getText().toString();
+        intent.putExtra("userInput", userMessage);
         startActivity(intent);
 
     }

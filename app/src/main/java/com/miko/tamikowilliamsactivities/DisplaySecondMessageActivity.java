@@ -29,10 +29,16 @@ public class DisplaySecondMessageActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(DisplayMessageActivity.EXTRA_MESSAGE);
-        TextView textView = (TextView)findViewById(R.id.secondText);
-        textView.setText(message);
+
+        Bundle intent = getIntent().getExtras();//Intent intent = getIntent();
+        String userMessage = intent.getString("userInput");
+        TextView textView = (TextView)findViewById(R.id.fText);
+        textView.setText(userMessage);
+
+        String message1 = intent.getString(DisplayMessageActivity.EXTRA_MESSAGE);
+        TextView textView1 = (TextView)findViewById(R.id.secondText);
+        textView1.setText(message1);
+
 
     }
 
