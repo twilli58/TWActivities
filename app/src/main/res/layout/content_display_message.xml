@@ -11,15 +11,61 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.miko.tamikowilliamsactivities.DisplayMessageActivity"
     tools:showIn="@layout/activity_display_message"
-    android:id="@+id/content" >
+    android:id="@+id/content"
+    android:background="#4b4a4a">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/textViewTest"
+        android:id="@+id/firstText"
+        android:layout_marginTop="85dp"
+        android:width="250dp"
+        android:textSize="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="148dp"
-        android:width="250dp" />
+        android:gravity="center"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Your Message is..."
+        android:id="@+id/WelcomeText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:textColor="#fefcfc" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_secondMessage"
+        android:layout_below="@+id/firstText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="4dp"
+        android:paddingRight="4dp"
+        android:paddingLeft="4dp"
+        android:text="@string/edit_secondMessage"
+        android:textColor="#272828"
+        android:background="#9afefcfd"
+        android:textSize="30sp"
+        android:inputType="text" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nextButton"
+        android:onClick="sendSecondMessage"
+        android:id="@+id/nextButton"
+        android:textColor="#ffffff"
+        android:background="#dc53a8"
+        android:textSize="25sp"
+        android:layout_below="@+id/edit_secondMessage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp" />
 </RelativeLayout>

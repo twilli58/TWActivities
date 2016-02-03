@@ -7,16 +7,15 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class DisplayMessageActivity extends AppCompatActivity {
-    public final static String EXTRA_MESSAGE = "com.miko.tamikowilliamsactivities.MESSAGE";
+public class DisplaySecondMessageActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_message);
+        setContentView(R.layout.activity_display_second_message);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -31,27 +30,13 @@ public class DisplayMessageActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        TextView receivedText = (TextView)findViewById(R.id.firstText);
-        receivedText.setText(message);
-        /**TextView textView = new TextView(this);
+        String message2 = intent.getStringExtra(DisplayMessageActivity.EXTRA_MESSAGE);
+        TextView textView = new TextView(this);
         textView.setTextSize(40);
-        textView.setText(message);*/
+        textView.setText(message2);
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
-        layout.addView(receivedText);
-    }
-    public void sendSecondMessage(View view) {
-        Intent intent = new Intent(this, DisplaySecondMessageActivity.class);
-        EditText editText = (EditText)findViewById(R.id.edit_secondMessage);
-        String message2 = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message2);
-
-        TextView textView = (TextView)findViewById(R.id.firstText);//if textview doesn't work change the field to a edit text and fix related issues
-        String message3 = textView.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message3);
-
-        startActivity(intent);
+        layout.addView(textView);
     }
 
 }
