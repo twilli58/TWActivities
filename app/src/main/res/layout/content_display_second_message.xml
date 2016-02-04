@@ -39,5 +39,29 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Your first message is..."
+        android:id="@+id/textViewFirst"
+        android:layout_alignParentTop="true"
+        android:textColor="#ffffff"
+        android:layout_alignStart="@+id/fText"
+        android:layout_alignEnd="@+id/fText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Your second message is..."
+        android:id="@+id/textViewSecond"
+        android:layout_above="@+id/secondText"
+        android:textColor="#ffffff"
+        android:layout_alignEnd="@+id/secondText"
+        android:layout_alignStart="@+id/secondText" />
+
 
 </RelativeLayout>
